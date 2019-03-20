@@ -15,7 +15,7 @@ public class KindergartenSystemKasper {
         // While loop, so that the program runs until the user stops it manually with "case 0"
         while (running) {
             // Welcome message and start menu;
-            System.out.println("****** Velkommen Til Roskilde Fri Børnehave Administrative System ******");
+            System.out.println("****** Velkommen Til Roskilde Fri BÃ¸rnehave Administrative System ******");
             System.out.println("Du er ved at logge ind. Identificer hvem du er:");
             System.out.println("1: Bestyrer");
             System.out.println("2: Medarbejder");
@@ -25,91 +25,63 @@ public class KindergartenSystemKasper {
                 // Manager login
                 case 1:
                 
-   boolean login = true;             
-   while (login){ 
-   
-   
+   boolean login = true; 
+               
+      while (login){ 
                 
-                
-   for(int n=0; n <3; n++){
+      for(int n=0; n <3; n++){
+               System.out.println("Indtast dit login: ");                  
+               String login1;
+            login1 = sConsole.next();            
+        boolean b = login1.equals("Sandra");                        
 
-    System.out.println("Indtast dit login: ");    
-              
-   String login1;
-   
-   
-    login1 = sConsole.next();
-
-     boolean b = login1.equals("Sandra");                        
-
-    if (b) {
-
-      
-
-        System.out.println("Login godtaget - Logger ind... ");
-         
-
+               if (b) {
+               System.out.println("Login godtaget - Logger ind... ");
         
-         // Hvis login fungere bruger vi break til at gå ud af loop, og forsætter koden.
-        
-        break;     
-
+         // Hvis login fungere bruger vi break til at gÃ¥ ud af loop, og forsÃ¦tter koden.       
+               break;     
     }  
+               if (b == false){
+               System.out.println();
+               System.out.println("Forkert login informationer, prÃ¸v igen.");
 
-     
-    if (b == false){
-
-        System.out.println();
-
-        System.out.println("Forkert login informationer, prøv igen.");
-
-        // Hvis n == 2, 3 forsøg er blevet brugt(n starter ved 0) og skulle stoppe programmet.
-
-        if(n >= 2){ // can also say if(n==2)
-
-            System.out.println("Du har brugt 3 loginforsøg. Går ud af programmet"); 
+        // Hvis n == 2, 3 forsÃ¸g er blevet brugt(n starter ved 0) og skulle stoppe programmet.
+               if(n >= 2){ 
+               System.out.println("Du har brugt 3 loginforsÃ¸g. GÃ¥r ud af programmet"); 
             
             login = false;
 
-
                break;
-            //System.exit(0);
-
-        }
-
-    
+        }    
   }
 }
                    while(login) {
 
-            
-      
-      
 
-                    System.out.println("Vælg hvad du vil gøre:");
+                    System.out.println("VÃ¦lg hvad du vil gÃ¸re:");
                     System.out.println("1. Indskriv et barn.");
                     System.out.println("0. Luk programmet.");
                     int adminInput = iConsole.nextInt();
                     switch (adminInput) {
                         // Enrollment
                         case 1:
-                            System.out.println("Indtast navnet på barnet:");
+                            System.out.println("Indtast navnet pÃ¥ barnet:");
                             String childName = sConsole.nextLine();
-                            System.out.println("Indtast fødselsdatoen for barnet med formatet (Dag/Måned/År):");
+                            System.out.println("Indtast fÃ¸dselsdatoen for barnet med formatet (Dag/MÃ¥ned/Ã…r):");
                             String dateOfBirth = sConsole.nextLine();
-                            System.out.println("Indtast alderen på barnet:");
+                            System.out.println("Indtast alderen pÃ¥ barnet:");
                             int age = iConsole.nextInt();
-                            System.out.println("Indtast første forælders navn:");
+                            System.out.println("Indtast fÃ¸rste forÃ¦lders navn:");
                             String parent1 = sConsole.nextLine();
-                            System.out.println("Indtast anden forælders navn:");
+                            System.out.println("Indtast anden forÃ¦lders navn:");
                             String parent2 = sConsole.nextLine();
-                            System.out.println("Indtast forældres adresse:");
+                            System.out.println("Indtast forÃ¦ldres adresse:");
                             String address = sConsole.nextLine();
-                            System.out.println("Indtast forældres E-mail:");
+                            System.out.println("Indtast forÃ¦ldres E-mail:");
                             String email = sConsole.nextLine();
-                            System.out.println("Indtast forældres primære tlf. nummer:");
+                            System.out.println("Indtast forÃ¦ldres primÃ¦re tlf. nummer:");
                             String phone1 = sConsole.nextLine();
-                            System.out.println("Indtast forældres sekundære tlf. nummer:");
+                            System.out.println("Indtast forÃ¦ldres sekundÃ¦re tlf. nummer:");
                             String phone2 = sConsole.nextLine();
                             // Calling the constructor of Child
                             Child child = new Child(childName, dateOfBirth, age, parent1, parent2, address, phone1, phone2);
